@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website built to showcase my projects, technical skills, certifications, and academic background.
 
-🔗 Live Website: https://your-vercel-link.vercel.app  
+🔗 Live Website: https://madhanamugan.vercel.app  
 
 ---
 
