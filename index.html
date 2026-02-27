@@ -604,25 +604,35 @@
         </div>
       </div>
       <div class="reveal rd2">
-        <form onsubmit="handleForm(event)">
-          <div class="form-group">
-            <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="John Doe" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" class="form-input" placeholder="john@example.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Subject</label>
-            <input type="text" class="form-input" placeholder="Let's collaborate on...">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea" placeholder="Tell me about your project or opportunity..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%"><span>Send Message ✦</span></button>
-        </form>
+        <form action="https://formspree.io/f/xeeldroe" method="POST">
+
+  <input type="hidden" name="_subject" value="New message from portfolio website">
+
+  <div class="form-group">
+    <label class="form-label">Your Name</label>
+    <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Email Address</label>
+    <input type="email" name="email" class="form-input" placeholder="john@example.com" required>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Subject</label>
+    <input type="text" name="subject" class="form-input" placeholder="Let's collaborate on...">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Message</label>
+    <textarea name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary" style="width:100%">
+    <span>Send Message ✦</span>
+  </button>
+
+</form>
       </div>
     </div>
   </div>
@@ -694,19 +704,6 @@ const countObs=new IntersectionObserver(es=>{
 },{threshold:.5});
 document.querySelectorAll('.stat-num[data-target]').forEach(el=>countObs.observe(el));
 
-
-// FORM
-function handleForm(e){
-  e.preventDefault();
-  const btn=e.target.querySelector('button');
-  btn.innerHTML='<span>✅ Sent! I\'ll get back to you.</span>';
-  btn.style.cssText='background:var(--accent3);border-color:var(--accent3);color:var(--bg);width:100%';
-  setTimeout(()=>{
-    btn.innerHTML='<span>Send Message ✦</span>';
-    btn.style.cssText='width:100%';
-    e.target.reset();
-  },3000);
-}
 
 // ACTIVE NAV HIGHLIGHT
 const sects=document.querySelectorAll('section[id]');
